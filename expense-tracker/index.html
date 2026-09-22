@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <h1>Expense Tracker</h1>
+            <p>Track your income and expenses</p>
+        </header>
+
+
+        <!-- Summary -->
+        <section class="summary">
+
+            <div class="summary-card balance">
+                <span>Total Balance</span>
+                <h2> ₹<span id="totalBalance"></span></h2>
+            </div>
+
+            <div class="summary-card income">
+                <span>Income</span>
+                <h2> ₹<span id="totalIncome"></span></h2>
+            </div>
+
+            <div class="summary-card expense">
+                <span>Expenses</span>
+                <h2> ₹<span id="totalExpense"></span></h2>
+            </div>
+
+        </section>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+
+            <!-- Add Transaction -->
+            <section class="card add-transaction">
+
+                <h2>Add Transaction</h2>
+
+                <form id="expense-form">
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+
+                        <input type="text" id="description" placeholder="e.g. Grocery Shopping" required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+
+                        <input type="number" id="amount" placeholder="Enter amount" required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="Food">🥗 Food</option>
+                            <option value="Travel">✈️ Travel</option>
+                            <option value="Shopping">🛒 Shopping</option>
+                            <option value="Bills">🧾 Bills</option>
+                            <option value="salary">💼 Salary</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Type</label>
+
+                        <div class="transaction-type">
+
+                            <label>
+                                <input type="radio" name="type" value="income">
+                                Income
+                            </label>
+
+                            <label>
+                                <input type="radio" name="type" value="expense" checked>
+                                Expense
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="submit" class="add-btn">
+                        Add Transaction
+                    </button>
+
+                </form>
+
+            </section>
+
+
+
+            <!-- Transactions -->
+            <section class="card transactions">
+
+                <div class="transaction-header">
+
+                    <h2>Transactions</h2>
+
+                    <select id="filter">
+
+                        <option value="all">
+                            All
+                        </option>
+
+                        <option value="income">
+                            Income
+                        </option>
+
+                        <option value="expense">
+                            Expense
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Search -->
+                <div class="search-box">
+
+                    <input type="text" id="search" placeholder="🔍 Search transaction...">
+
+                </div>
+
+
+                <!-- Transaction List -->
+                <ul id="transactionList" class="transaction-list">
+
+
+                    <!-- Income Transaction -->
+
+                    <!-- <li class="transaction-item income-item">
+
+                        <div class="transaction-left">
+
+                            <div class="transaction-icon income-icon">
+                                💼
+                            </div>
+
+                            <div class="transaction-info">
+
+                                <h3>
+                                    Freelance Payment
+                                </h3>
+
+                                <div class="transaction-meta">
+
+                                    <span class="category-badge">
+                                        Other
+                                    </span>
+
+                                    <span>
+                                        •
+                                    </span>
+
+                                    <span>
+                                        Today
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="transaction-right">
+
+                            <strong class="transaction-amount income-amount">
+                                + ₹15,000
+                            </strong>
+
+                            <button class="delete-btn" title="Delete transaction">
+                                🗑
+                            </button>
+
+                        </div>
+
+                    </li> -->
+
+
+
+                </ul>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
